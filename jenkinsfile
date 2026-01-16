@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/danduchaki14-source/jenkins.git'
+                git branch: 'main', url: 'https://github.com/danduchakri14-source/jenkins.git'
             }
         }
         stage('Show IP') {
