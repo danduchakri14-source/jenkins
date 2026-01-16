@@ -1,2 +1,4 @@
 #!/bin/bash
-echo " IP Address : $(hostname _ I)
+ip=$(hostname -I | awk '{print $1}')
+ 
+echo "Local IP Address: $ip"
