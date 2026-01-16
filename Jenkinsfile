@@ -1,16 +1,27 @@
 pipeline {
-    agent any
+    agent any   // Runs on any available Ubuntu/Linux agent
     stages {
         stage('Checkout') {
             steps {
+                // Clone your GitHub repository
                 git branch: 'main', url: 'https://github.com/danduchakri14-source/jenkins.git'
             }
         }
-        stage('Show IP') {
+        stage('Run Script') {
             steps {
-                sh './get_ip.sh'
+                // Ensure script is executable
+                sh 'chmod +x get-ip.sh'
+                // Run the script
+                sh './get-ip.sh'
             }
         }
     }
+    post {
+        success {
+            echo 'Pipeline executed successfully!'
+        }
+        failure {
+            echo 'Pipeline failed!'
+        }
+    }
 }
- 
