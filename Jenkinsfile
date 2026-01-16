@@ -10,9 +10,9 @@ pipeline {
         stage('Run Script') {
             steps {
                 // Ensure script is executable
-                sh 'chmod +x get-ip.sh'
+                sh 'chmod +x get_ip.sh'
                 // Run the script
-                sh './get-ip.sh'
+                sh './get_ip.sh'
             }
         }
     }
